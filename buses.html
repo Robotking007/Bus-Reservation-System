@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Buses | The Trio Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="small-header">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                <span>The Trio Software</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="user.html">Dashboard</a></li>
+                <li><a href="#" class="btn btn-outline" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>Available Buses</h1>
+    </header>
+
+    <main class="buses-container">
+        <div class="search-filters">
+            <div class="filter-group">
+                <label for="source">From:</label>
+                <select id="source">
+                    <option value="">All Sources</option>
+                    <!-- Sources will be populated via JavaScript -->
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="destination">To:</label>
+                <select id="destination">
+                    <option value="">All Destinations</option>
+                    <!-- Destinations will be populated via JavaScript -->
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+            <button class="btn btn-primary" id="search-btn">Search Buses</button>
+        </div>
+
+        <div class="buses-list">
+            <!-- Buses will be loaded here via JavaScript -->
+        </div>
+    </main>
+
+    <script src="assets/js/buses.js"></script>
+</body>
+</html>

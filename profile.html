@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | The Trio Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="small-header">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                <span>The Trio Software</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="user.html">Dashboard</a></li>
+                <li><a href="#" class="btn btn-outline" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>My Profile</h1>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                    <h2 id="profile-name">John Doe</h2>
+                    <p id="profile-username">@johndoe</p>
+                </div>
+            </div>
+
+            <div class="profile-details">
+                <h3><i class="fas fa-info-circle"></i> Personal Information</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Email:</span>
+                    <span id="profile-email">john.doe@example.com</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Phone:</span>
+                    <span id="profile-phone">+1 234 567 8901</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Address:</span>
+                    <span id="profile-address">123 Main St, City, Country</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Member Since:</span>
+                    <span id="member-since">January 2023</span>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn btn-primary" id="edit-profile-btn">Edit Profile</button>
+                <button class="btn btn-outline" id="change-password-btn">Change Password</button>
+            </div>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-card">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Total Trips</h3>
+                <p id="total-trips">5</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h3>Loyalty Points</h3>
+                <p id="loyalty-points">250</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form">
+                <div class="form-group">
+                    <label for="edit-name">Full Name</label>
+                    <input type="text" id="edit-name" name="edit-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email">Email</label>
+                    <input type="email" id="edit-email" name="edit-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-phone">Phone</label>
+                    <input type="tel" id="edit-phone" name="edit-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-address">Address</label>
+                    <textarea id="edit-address" name="edit-address" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

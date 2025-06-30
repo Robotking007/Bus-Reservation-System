@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reservations | The Trio Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="small-header">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                <span>The Trio Software</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="user.html">Dashboard</a></li>
+                <li><a href="buses.html">Book Tickets</a></li>
+                <li><a href="#" class="btn btn-outline" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>My Reservations</h1>
+    </header>
+
+    <main class="reservations-container">
+        <div class="reservations-header">
+            <h2><i class="fas fa-ticket-alt"></i> Your Bookings</h2>
+            <div class="reservations-filter">
+                <select id="filter-status">
+                    <option value="all">All Reservations</option>
+                    <option value="upcoming">Upcoming Trips</option>
+                    <option value="past">Past Trips</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="reservations-list">
+            <!-- Reservation cards will be loaded here via JavaScript -->
+            <div class="no-reservations">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>No Reservations Found</h3>
+                <p>You haven't made any reservations yet. <a href="buses.html">Book your first trip now!</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Ticket Modal -->
+    <div id="ticket-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="ticket">
+                <div class="ticket-header">
+                    <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                    <h2>Bus Ticket</h2>
+                    <div class="ticket-id">Booking ID: <span id="booking-id">TR123456</span></div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-info">
+                        <div class="info-row">
+                            <span class="info-label">Passenger:</span>
+                            <span id="ticket-passenger">John Doe</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Bus Number:</span>
+                            <span id="ticket-bus-number">101</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Route:</span>
+                            <span id="ticket-route">New York to Boston</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Departure:</span>
+                            <span id="ticket-departure">08:00 AM, 15 Nov 2023</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Arrival:</span>
+                            <span id="ticket-arrival">12:00 PM, 15 Nov 2023</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Seat Number:</span>
+                            <span id="ticket-seat">14</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Fare:</span>
+                            <span id="ticket-fare">₹455.50</span>
+                        </div>
+                    </div>
+                    <div class="ticket-qr">
+                        <div id="qrcode"></div>
+                        <small>Scan this code at boarding</small>
+                    </div>
+                </div>
+                <div class="ticket-footer">
+                    <button class="btn btn-primary" id="print-ticket"><i class="fas fa-print"></i> Print Ticket</button>
+                    <button class="btn btn-danger" id="cancel-ticket"><i class="fas fa-times"></i> Cancel Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="assets/js/reservations.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | The Trio Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="small-header">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                <span>The Trio Software</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buses.html">Book Tickets</a></li>
+                <li><a href="reservations.html">My Bookings</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" class="btn btn-outline" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome Back, <span id="user-greeting">User</span>!</h1>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="stat-info">
+                    <h3>Upcoming Trips</h3>
+                    <p id="upcoming-trips">2</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <div class="stat-info">
+                    <h3>Loyalty Points</h3>
+                    <p id="loyalty-points">350</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-bus"></i>
+                <div class="stat-info">
+                    <h3>Total Trips</h3>
+                    <p id="total-trips">7</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-sections">
+            <section class="upcoming-trips">
+                <h2><i class="fas fa-calendar-alt"></i> Upcoming Trips</h2>
+                <div class="trip-cards">
+                    <!-- Upcoming trips will be loaded here via JavaScript -->
+                    <div class="no-trips">
+                        <i class="fas fa-ticket-alt"></i>
+                        <h3>No Upcoming Trips</h3>
+                        <p>You don't have any upcoming trips. <a href="buses.html">Book your next adventure now!</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="buses.html" class="action-btn">
+                        <i class="fas fa-bus"></i>
+                        <span>Book a Ticket</span>
+                    </a>
+                    <a href="reservations.html" class="action-btn">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>View Bookings</span>
+                    </a>
+                    <a href="profile.html" class="action-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Edit Profile</span>
+                    </a>
+                    <a href="#" class="action-btn" id="change-password-btn">
+                        <i class="fas fa-key"></i>
+                        <span>Change Password</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Change Password Modal -->
+    <div id="change-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Change Password</h2>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" name="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    <small class="form-text">Minimum 8 characters</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password">Confirm New Password</label>
+                    <input type="password" id="confirm-new-password" name="confirm-new-password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/user.js"></script>
+</body>
+</html>

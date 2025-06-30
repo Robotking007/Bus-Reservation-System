@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | The Trio Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="small-header">
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="The Trio Software Logo">
+                <span>The Trio Software</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="btn btn-danger" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-sidebar">
+            <ul>
+                <li class="active"><a href="#" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#" data-section="buses"><i class="fas fa-bus"></i> Manage Buses</a></li>
+                <li><a href="#" data-section="reservations"><i class="fas fa-ticket-alt"></i> View Reservations</a></li>
+                <li><a href="#" data-section="reports"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="#" data-section="users"><i class="fas fa-users"></i> Manage Users</a></li>
+            </ul>
+        </div>
+
+        <div class="admin-content">
+            <section id="dashboard-section" class="admin-section active">
+                <h2><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Buses</h3>
+                        <p id="total-buses">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Reservations</h3>
+                        <p id="total-reservations">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Registered Users</h3>
+                        <p id="total-users">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Revenue</h3>
+                        <p id="today-revenue">₹0.00</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="buses-section" class="admin-section">
+                <h2><i class="fas fa-bus"></i> Manage Buses</h2>
+                <button class="btn btn-primary" id="add-bus-btn">Add New Bus</button>
+                <div class="table-responsive">
+                    <table id="buses-table">
+                        <thead>
+                            <tr>
+                                <th>Bus No.</th>
+                                <th>Route</th>
+                                <th>Departure</th>
+                                <th>Arrival</th>
+                                <th>Date</th>
+                                <th>Fare</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Bus data will be loaded here via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="reservations-section" class="admin-section">
+                <h2><i class="fas fa-ticket-alt"></i> All Reservations</h2>
+                <div class="table-responsive">
+                    <table id="reservations-table">
+                        <thead>
+                            <tr>
+                                <th>Bus No.</th>
+                                <th>Route</th>
+                                <th>Seat</th>
+                                <th>Passenger</th>
+                                <th>Contact</th>
+                                <th>Booking Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Reservation data will be loaded here via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Add Bus Modal -->
+    <div id="add-bus-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add New Bus</h2>
+            <form id="add-bus-form">
+                <div class="form-group">
+                    <label for="bus-number">Bus Number</label>
+                    <input type="number" id="bus-number" name="bus-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="source">Source</label>
+                    <input type="text" id="source" name="source" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="departure-time">Departure Time</label>
+                        <input type="time" id="departure-time" name="departure-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival-time">Arrival Time</label>
+                        <input type="time" id="arrival-time" name="arrival-time" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="fare">Fare (₹)</label>
+                    <input type="number" id="fare" name="fare" step="0.01" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Bus</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
